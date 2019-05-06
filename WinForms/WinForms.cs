@@ -30,7 +30,7 @@ namespace WinForms
 
             // set flow direction from right to left
             viewModel.FlowDirection = System.Windows.FlowDirection.RightToLeft;
-            viewModel.NameColumnHeader = "بلد";
+
 
             // read data from excel
 
@@ -70,7 +70,8 @@ namespace WinForms
         [bbSortable]
         [Description("تعداد السكان")]
         public int Population { get; set; }
-        
+        [Description("بلد")]
+        public override string Name {get;set; }
         
         public Country(Country parent =  null) : base(parent)
         {
