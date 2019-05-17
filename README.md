@@ -1,3 +1,6 @@
+
+![NuGet](https://img.shields.io/nuget/v/bbHierarchicalGrid.svg)  
+
 # bbHierarchicalGrid.Examples
 Examples for the HierarchalGrid control in Windows Presentation Foundation (WPF) and WinForms.  
 # Previews:
