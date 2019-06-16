@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         SnapsToDevicePixels="True"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:bb="http://schemas.bluebyte.biz/bbHierarchicalGrid"
+        xmlns:bb="http://schemas.bluebyte.biz/Controls"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Mini Explorer" WindowStyle="SingleBorderWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <bb:bbHierarchicalDataGrid Name="bbGrid"/>
         <Grid Grid.Row="1">
@@ -21,8 +21,12 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1"  Margin="10" HorizontalAlignment="Right" Content="Browse to folder..." Command="{Binding AddFolderCommand}"/>
-            <TextBox Margin="10" Grid.Column="0" IsReadOnly="True" HorizontalAlignment="Stretch" Text="{Binding CurrentDirectory}"/>
+            <Border VerticalAlignment="Stretch" Background="Black"  Grid.Column="1">
+                <Button VerticalAlignment="Center"  VerticalContentAlignment="Center" Padding="5"  HorizontalAlignment="Center" Content="Browse to folder..." Command="{Binding AddFolderCommand}"/>
+            </Border>
+            <Border Background="Black" Grid.Column="0">
+                <TextBox   IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding CurrentDirectory}"/>
+            </Border>
         </Grid>
     </Grid>
 </Window>

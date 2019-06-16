@@ -24,6 +24,7 @@ namespace WPF.Models
         /// <summary>
         /// Name of this item.
         /// </summary>
+        [bbSortable]
         public override string Name
         {
             get { return name; }
@@ -67,7 +68,6 @@ namespace WPF.Models
         private DateTime modifiedDateTime;
         [bbSortable]
         [ReadOnly(true)]
-        [bbUseDateTimePicker]
         [bbColumnOrderAttribute(2)]
         [Description("Modified")]
         public DateTime ModifiedDateTime

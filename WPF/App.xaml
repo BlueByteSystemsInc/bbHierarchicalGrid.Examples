@@ -6,10 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/bbHierarchicalGrid;component/Resources/Cultures/French.xaml" />
-                <ResourceDictionary Source="/bbHierarchicalGrid;component/Resources/Cultures/Arabic.xaml" />
-                <ResourceDictionary Source="/bbHierarchicalGrid;component/Resources/Cultures/Spanish.xaml" />
-                <ResourceDictionary Source="/bbHierarchicalGrid;component/Resources/Cultures/English.xaml" />
+                <ResourceDictionary Source="/bbHierarchicalGrid;component/Styles/Dark.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

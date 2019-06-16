@@ -5,6 +5,7 @@ using OfficeOpenXml;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WinForms
@@ -14,23 +15,25 @@ namespace WinForms
         bbViewModel<Country> viewModel = default(bbViewModel<Country>);
         public WinForms()
         {
-            viewModel = new bbViewModel<Country>(Properties.Settings.Default.LicenseKey, bbHierarchicalGrid.Enums.DisplayLanguage.Arabic);
+
+            // set UI thread culture to Tunisian Arabic
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ar-TN");
+
+            viewModel = new bbViewModel<Country>(Properties.Settings.Default.LicenseKey);
+            // set flow direction from right to left
+            viewModel.FlowDirection = System.Windows.FlowDirection.RightToLeft;
+            viewModel.FontFamily = new System.Windows.Media.FontFamily("Droid Arabic Naskh"); 
             viewModel.Initialize();
             InitializeComponent();
         }
 
         private void WinForms_Load(object sender, EventArgs e)
         {
-           
+        
+
             var bbHierarchicalDataGridControl = new bbHierarchicalGrid.bbHierarchicalDataGrid();
             this.elementHost1.Child = bbHierarchicalDataGridControl;
             bbHierarchicalDataGridControl.DataContext = viewModel;
-
-
-
-            // set flow direction from right to left
-            viewModel.FlowDirection = System.Windows.FlowDirection.RightToLeft;
-
 
             // read data from excel
 
